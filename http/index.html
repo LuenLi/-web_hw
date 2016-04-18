@@ -1,0 +1,33 @@
+<html>
+<head>
+</head>
+
+<body>
+	<script src = "https://code.jquery.com/jquery-2.2.3.min.js"></script>
+	<form>
+	  	<input id = 'id' type = 'text'>
+		<input type = 'button' value = 'submit' id = 'submit'>
+		<br><a> F12345678 Student1</a>
+		<br><a> F74016205 weiluen</a>
+	</form>
+	<script>
+		$('#submit').click(function(){
+		    $.ajax({
+		      	url:'http://luffy.ee.ncku.edu.tw/~F74016205/http/do.njs',
+			type:'GET',
+			data:{
+				id:$('#id').val()
+			},
+			dataType:'text',
+			error:function(){
+				alert("error");
+			},
+			success:function(res){
+				alert(res);
+			}
+		      });
+		    });
+	</script>
+</body>
+
+</html>
